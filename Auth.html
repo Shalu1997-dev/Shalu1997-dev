@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #34495E;
+        }
+
+        .box {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border-radius: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 300%;
+            animation: animate 4s linear infinite;
+            background: linear-gradient(#00ccff, #d400d4);
+        }
+
+        p {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+
+            text-shadow: 2px 2px 4px red;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            background: #0e1538;
+            border-radius: 16px;
+        }
+
+        .box .login_div {
+            position: relative;
+            color: white;
+            font-size: 1.5em;
+            z-index: 1;
+
+        }
+
+        .box .login_div input {
+            height: 35px;
+            border-radius: 16px;
+            border: 2px solid rgb(251, 251, 251)
+        }
+
+        .login_div .container {
+            padding: 5px;
+        }
+
+        .btn {
+            height: 40px;
+            width: 80px;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="login_div">
+            <div class="container">
+                <label for="nameinp">Name:</label>
+                <input type="text" class="formerror" id="nameinp" style="margin-left: 119px;"">
+                <p id=" error1"></p>
+                <label for="phoneinp">Phone No:</label>
+                <input type="number" class="formerror" id="phoneinp" style="margin-left: 66px;">
+                <p id="error2"></p>
+                <label for="emailinp">Email address:</label>
+                <input type="text" class="formerror" id="emailinp">
+                <p id="error3"></p>
+                <label for="passinp">Password :</label>
+                <input type="password" class="formerror" id="passinp" style="margin-left: 51px;">
+                <p id="error4"></p>
+
+                <button type="submit" class="btn btn-primary" onclick="myFunction()">Submit</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- <form action="" method=""" class="login_form">
+                <div class="row">
+                    <label>Email address:</label>
+                    <input type="text" name="username" value="" id="emailinp">
+                    <p id="error1"></p>
+                </div>
+                <div class="row">
+                    <label> Password: </label>
+                    <input type="password" name="password" value="" style="margin-left: 53px;" id="passinp">
+                    <p id="error2"></p>
+                </div>
+                <div class="row submit">
+                    <!-- <input class="btn btn-default" type="submit" value="Login" id="btn1" onclick="myFunction()"> -->
+    <!-- <button class="btn btn-default" type="submit" value="Login" id="btn1" onclick="myFunction()"> Submit</button>
+                </div>
+            <!-- </form> -->
+    <!-- </div>
+    </div> --> -
+
+
+    <script>
+
+function clearField(){
+    return replaceAll('')
+}
+
+        function myFunction() {
+
+            messageOne = document.getElementById("error1");
+            // messageOne.innerHTML = "";
+            var x = document.getElementById("nameinp").value;
+            if (x == "") {
+                messageOne.innerHTML = " The field  cant be empty !"
+                return false
+                
+                
+                
+            }
+            else if (x.length < 3 && x == Number(x)) {
+                messageOne.innerHTML = "Name shouldnt be less than 3 charc and also cant contain nos !"
+                console.log("Name shouldnt be less than 3 charc and also cant contain nos !")
+                return false
+                
+            }
+            
+            {
+                
+            }
+            messageTwo = document.getElementById("error2");
+            // messageTwo.innerHTML = "";
+            var y = document.getElementById("phoneinp").value;
+            if (y == "") {
+                messageTwo.innerHTML = " The field  cant be empty !"
+                return false
+            }
+            else if (y.length < 10) {
+                messageTwo.innerHTML = "Not a valid number !"
+                messageTwo.innerHTML= clearField()
+                
+                
+            }
+            messageThree = document.getElementById("error3");
+            // messageThree.innerHTML = "";
+            var w = document.getElementById("emailinp").value;
+            if (w == "") {
+                messageThree.innerHTML = " The field  cant be empty !"
+                return false
+            }
+            else if (w.length <= 6) {
+                messageThree.innerHTML = "password should be atleast 6 chars !"
+                return false
+            }
+            
+            messageFour = document.getElementById("error4");
+            // messageFour.innerHTML = "";
+            z = document.getElementById("passinp").value;
+            if (z == "") {
+                messageFour.innerHTML = " The field  cant be empty"
+                return false
+            }
+
+
+
+            return true
+        }
+
+
+    </script>
+</body>
+
+
+
+</html>

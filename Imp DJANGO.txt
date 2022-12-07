@@ -1,0 +1,33 @@
+ Database :-
+
+DATABASES = {
+	'default': {
+	    'ENGINE': 'django.db.backends.mysql',#MySQL engine will be used as the db engine
+	    'NAME': 'project_2',#Name of the database created for this project
+	    'USER': 'user',#Enter your mysql username
+	    'PASSWORD': 'Shalu',#Enter your mysql password
+	    'HOST': 'localhost',
+	    'PORT': '3306',
+	}
+}
+
+
+
+Templates dirc :- 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]

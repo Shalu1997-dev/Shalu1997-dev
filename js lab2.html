@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="error1"></p>
+    </div>
+    <form id="form" action="/" method="get">
+        <div>
+            <label for="name">Name :</label>
+            <input id="name" name="name" type="text">
+            <br>
+            <label for="password">Password :</label>
+            <input id="password" name="password" type="text">
+            <br>
+            <label for="nos">Phone No :</label>
+            <input id="nos" name="nos" type="number">
+            <br>
+            <button type="submit" onclick="myfunc()">Submit</button>
+        </div>
+    </form>
+    <script>
+        const name = document.getElementById("name")
+        const password = document.getElementById("password")
+        const number = document.getElementById("nos")
+        const form = document.getElementById("form")
+        const errorElement = document.getElementById("error")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+        })
+
+        function myfunc() {
+            if (name.value == "" || name.value == "null") {
+                document.getElementById("error1").innerHTML = "Name cant be null" :
+                // errorElement.innerText = ""
+            }
+            if (name.value.length < 3) {
+                alert("Please enter a valid name")
+
+            }
+            if (name.value != isNaN()) {
+                alert("Name cant contain number")
+            }
+            if (password.value == "" || password.value == "null") {
+                alert("password cant be null or empty")
+            }
+            if (password.value.length < 6) {
+                alert("password cant less than 6 characters")
+            }
+            if (number.value.length < 10) {
+                alert("Please enter a valid phone number")
+            }
+        }
+    </script>
+</body>
+
+</html>

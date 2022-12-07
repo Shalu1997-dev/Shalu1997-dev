@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 193px;
+
+
+
+        }
+
+        #rep1 {
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            margin-right: 15px;
+            border-radius: 28px;
+            justify-items: center;
+            overflow: hidden;
+            height: 237px;
+            width: 221px;
+
+
+
+        }
+
+        #rep2 {
+
+            background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            margin-right: 15px;
+            box-shadow: 15px;
+            border-radius: 28px;
+            overflow: hidden;
+            height: 237px;
+            width: 221px;
+        }
+
+        #rep3 {
+
+            background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            border-radius: 28px;
+            overflow: hidden;
+            height: 237px;
+            width: 221px;
+        }
+    </style>
+</head>
+<div class="container">
+    <p id="rep1"></p>
+    <p id="rep2"></p>
+    <p id="rep3"></p>
+</div>
+
+<body>
+    <script>
+        setInterval(() => {
+            var hours = new Date().getHours()
+            document.getElementById("rep1").innerHTML = hours;
+            var minutes = new Date().getMinutes()
+            document.getElementById("rep2").innerHTML = minutes;
+            var seconds = new Date().getSeconds()
+            document.getElementById("rep3").innerHTML = seconds;
+
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

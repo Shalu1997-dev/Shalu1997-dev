@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x = Math.floor((Math.random() * 100) + 1);
+        let y;
+        chance = 0
+        do {
+           y= prompt("Enter a number:")
+            if (y < x) {
+                console.log("The entered number is less than the actual number");
+            }
+            else if (y > x) {
+                console.log("the entered numberis greater than the actual number");
+            }
+            else if (y == x) {
+                console.log("You have guessed the rightnumber");
+            }
+        }
+        while (x != y)
+                chance = chance + 1;
+            console.log("Your guess is" + (100 - chance) + "Thanks U")
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator </title>
+</head>
+
+<body>
+    First Number :
+    <input id="num1" type="text"><br>
+    <br>
+    Second Number :
+    <input type="text" name="numbers" id="num2" value=""><br>
+    <br>
+    <label for="category">Select from Below :</label>
+    <select name="category" id="category">
+        <option value="">Please select which method</option>
+        <option value="Add" >Add+</option>
+        <option value="Substract" >Substract -</option>
+        <option value="Multiply" >Multiply *</option>
+        <option value="Divide" >Divide /</option>
+        <option value="Percentage" >Percentage</option>
+    </select> <br>
+    <br>
+    Result :
+    <input id="res" type="text" value=""><br>
+    <br>
+    <button id="btn1" type="button" onclick="result()" value="Display Result">Result </button>
+
+    <script type="text/javascript">
+        function result() {
+            x = document.getElementById("num1").value;
+            y = document.getElementById("num2").value;
+            x = parseInt(x)
+            y = parseInt(y)
+           
+        if(category.value =="Add") {
+            z = x+y
+            document.getElementById("res").value = z
+        }
+           
+        else if(category.value == "Substract") {
+            z = x-y
+            document.getElementById("res").value = z
+        }
+           
+        else if(category.value == "Multiply") {
+            z = x*y
+            document.getElementById("res").value = z
+        }
+           
+        else if(category.value == "Divide") {
+            z = x/y
+            document.getElementById("res").value = z
+        }
+        else if(category.value == "Percentage") {
+            z = (x/y)*100
+            document.getElementById("res").value = z
+        }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
